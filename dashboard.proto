@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package dashboard;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "./dashboard.v01";
+
+service dashboard {
+  rpc getRegions (google.protobuf.Empty) returns (RegionsResponse);
+  rpc getTu (TuRequest) returns (TuResponse);
+  rpc getTt (TtRequest) returns (TtResponse);
+  rpc getSalesData (getSalesRequest) returns (getSalesResponse);
+}
+
+message Region {
+  int32 id = 1;
+  string name = 2;
+}
+
+message RegionsResponse {
+  repeated Region regions = 1;
+}
+
+message Tu {
+  int32 id = 1;
+  string name = 2;
+}
+
+message TuRequest {
+  string region = 1;
+}
+
+message TuResponse {
+  repeated Tu tu = 1;
+}
+
+message Tt {
+  string mvzCode = 1;
+  string name = 2;
+}
+
+message TtRequest {
+  string tu = 1;
+}
+
+message TtResponse {
+  repeated Tt tt = 1;
+}
+
+message getSalesRequest {
+  string date = 1;
+  int32 regionId = 2;
+  string tuName = 3;
+  string mvzCode = 4;
+}
+
+message getSalesResponse {
+  int64 salesTotal = 1;
+  int64 salesMargin = 2;
+  int64 retailTotal = 3;
+}
