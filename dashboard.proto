@@ -48,12 +48,8 @@ message TtResponse {
   repeated Tt tt = 1;
 }
 
-message Date {
-  string date = 1;
-}
-
 message getSalesRequest {
-  repeated Date date = 1;
+  repeated string date = 1;
   string region = 2;
   string tuName = 3;
   string mvzCode = 4;
