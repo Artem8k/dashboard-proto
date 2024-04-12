@@ -61,6 +61,8 @@ message Sales {
   int64 retailTotal = 3;
   string tt = 4;
   string mvzCode = 5;
+  string planRetail = 6;
+	string planMargin = 7;
 }
 
 message getSalesResponse {
