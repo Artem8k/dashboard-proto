@@ -56,9 +56,9 @@ message getSalesRequest {
 }
 
 message Sales {
-  int32 salesTotal = 1;
-  int32 salesMargin = 2;
-  int32 retailTotal = 3;
+  int64 salesTotal = 1;
+  int64 salesMargin = 2;
+  int64 retailTotal = 3;
   string tt = 4;
   string mvzCode = 5;
 }
