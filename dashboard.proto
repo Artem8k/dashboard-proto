@@ -50,13 +50,19 @@ message TtResponse {
 
 message getSalesRequest {
   repeated string date = 1;
-  int32 regionId = 2;
+  string region = 2;
   string tuName = 3;
   string mvzCode = 4;
 }
 
+message Sales {
+  int32 salesTotal = 1;
+  int32 salesMargin = 2;
+  int32 retailTotal = 3;
+  string tt = 4;
+  string mvzCode = 5;
+}
+
 message getSalesResponse {
-  int64 salesTotal = 1;
-  int64 salesMargin = 2;
-  int64 retailTotal = 3;
+  repeated Sales sales = 1;
 }
